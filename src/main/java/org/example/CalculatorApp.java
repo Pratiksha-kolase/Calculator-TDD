@@ -17,8 +17,8 @@ public class CalculatorApp {
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
         isNegative(integers);
-        boolean isGreaterThanThousand = integers.stream().anyMatch(element->element>1000);
-        if(isGreaterThanThousand){
+        boolean isGreaterThanThousand = integers.stream().anyMatch(element -> element > 1000);
+        if (isGreaterThanThousand) {
             return ignoreGreaterThanThousandAndSum(integers);
         }
         return integers.stream().mapToInt(Integer::intValue).sum();
@@ -42,9 +42,10 @@ public class CalculatorApp {
         }
         return separateNum;
     }
-private int ignoreGreaterThanThousandAndSum(List<Integer> intergersToAdd){
-        return intergersToAdd.stream().filter(element -> element<1000).mapToInt(Integer::intValue).sum();
-}
+
+    private int ignoreGreaterThanThousandAndSum(List<Integer> intergersToAdd) {
+        return intergersToAdd.stream().filter(element -> element < 1000).mapToInt(Integer::intValue).sum();
+    }
 //    public int substract(String stringToSubstract){
 //        if (stringToSubstract.isEmpty()) {
 //            return 0;
