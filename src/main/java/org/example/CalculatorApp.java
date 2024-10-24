@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class CalculatorApp {
 
-    public int add(String num) {
+    public int add(String num) throws IllegalArgumentException {
 
         if (num.isEmpty()) {
             return 0;
@@ -17,6 +17,10 @@ public class CalculatorApp {
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
         isNegative(integers);
+        boolean isGreaterThanThousand = integers.stream().anyMatch(element->element>1000);
+        if(isGreaterThanThousand){
+            throw new IllegalArgumentException("Greater than thousand number");
+        }
         return integers.stream().mapToInt(Integer::intValue).sum();
     }
 
