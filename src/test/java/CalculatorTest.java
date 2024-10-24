@@ -52,8 +52,11 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testWithGreaterThanThousand(){
-        assertEquals(2000,calculatorApp.add("0,2000"));
+    public void testWithGreaterThanThousand() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculatorApp.add("0,2000");
+        });
+        assertEquals("Greater than thousand number", exception.getMessage());
     }
 
 }
