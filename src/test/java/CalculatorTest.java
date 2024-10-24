@@ -53,10 +53,6 @@ public class CalculatorTest {
 
     @Test
     public void testWithGreaterThanThousand() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            calculatorApp.add("0,2000");
-        });
-        assertEquals("Greater than thousand number", exception.getMessage());
+        assertEquals(0, calculatorApp.add("0,2000"));
     }
-
 }

@@ -19,7 +19,7 @@ public class CalculatorApp {
         isNegative(integers);
         boolean isGreaterThanThousand = integers.stream().anyMatch(element->element>1000);
         if(isGreaterThanThousand){
-            throw new IllegalArgumentException("Greater than thousand number");
+            return ignoreGreaterThanThousandAndSum(integers);
         }
         return integers.stream().mapToInt(Integer::intValue).sum();
     }
@@ -42,7 +42,9 @@ public class CalculatorApp {
         }
         return separateNum;
     }
-
+private int ignoreGreaterThanThousandAndSum(List<Integer> intergersToAdd){
+        return intergersToAdd.stream().filter(element -> element<1000).mapToInt(Integer::intValue).sum();
+}
 //    public int substract(String stringToSubstract){
 //        if (stringToSubstract.isEmpty()) {
 //            return 0;
