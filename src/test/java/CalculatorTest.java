@@ -50,4 +50,10 @@ public class CalculatorTest {
         assertEquals(6, calculatorApp.add("1,2,3"));
         assertEquals(6, calculatorApp.add("1,2\t3"));
     }
+
+    @Test
+    public void testWithGreaterThanThousand(){
+        assertEquals(2000,calculatorApp.add("0,2000"));
+    }
+
 }

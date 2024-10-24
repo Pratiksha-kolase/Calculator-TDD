@@ -17,7 +17,6 @@ public class CalculatorApp {
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
         isNegative(integers);
-
         return integers.stream().mapToInt(Integer::intValue).sum();
     }
 
@@ -40,6 +39,13 @@ public class CalculatorApp {
         return separateNum;
     }
 
+//    public int substract(String stringToSubstract){
+//        if (stringToSubstract.isEmpty()) {
+//            return 0;
+//        }
+//
+//
+//    }
 
 
 }
